@@ -1,8 +1,8 @@
 import React from "react";
-import "../assets/css/ExpenceItem.css";
-import { ExpenceItemProps } from "../types/components/ExpenceItem";
+import "../../assets/css/ExpenceItem.css";
+import { ExpenceItemProps } from "../../types/components/ExpenceItem";
 import ExpenceDate from "./ExpenceDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 function ExpenceItem({id,title,date,amount}:ExpenceItemProps) {
   return <Card className="expense-item">

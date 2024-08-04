@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/css/Card.css";
+import "../../assets/css/Card.css";
 
 //--composition
 function Card(props:any) {

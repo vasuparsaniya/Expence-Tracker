@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ExpenceItem from './components/ExpenceItem';
+import ExpenceItem from './components/Expence/ExpenceItem';
+import Expences from './components/Expence/Expences';
+import { ExpencesArray } from './types/App';
 
-const expenses = [
+const expenses:ExpencesArray = [
   {
     id: 'e1',
     title: 'Toilet Paper',
@@ -28,10 +30,7 @@ const expenses = [
 function App() {
   return (
     <div>
-      {expenses.map((item, index) => {
-        return <ExpenceItem id={item.id} title={item.title} amount={item.amount} date={item.date} />
-      })}
-        
+      <Expences expenses={ expenses} />
     </div>
   );
 }

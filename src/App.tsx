@@ -4,6 +4,7 @@ import './App.css';
 import ExpenceItem from './components/Expence/ExpenceItem';
 import Expences from './components/Expence/Expences';
 import { ExpencesArray } from './types/App';
+import NewExpense from './components/NewExpense/NewExpense';
 
 const expenses:ExpencesArray = [
   {
@@ -30,6 +31,7 @@ const expenses:ExpencesArray = [
 function App() {
   return (
     <div>
+      <NewExpense />
       <Expences expenses={ expenses} />
     </div>
   );

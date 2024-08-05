@@ -1,10 +1,10 @@
-interface Expences {
+interface ExpencesObject {
   id: string;
   title: string;
   amount: number;
   date: Date
 }
 
-type ExpencesArray = Expences[];
+type ExpencesArray = ExpencesObject[];
 
-export { Expences, ExpencesArray }
+export { ExpencesObject, ExpencesArray }

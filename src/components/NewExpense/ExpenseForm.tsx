@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import "../../assets/css/ExpenseForm.css";
 
-function ExpenseForm() {
+function ExpenseForm({onSaveExpenceData}:{onSaveExpenceData:(data:any)=>void}) {
   // const [enteredTitle, setEnteredTitle] = useState<string>("");
   // const [enteredAmount, setEnteredAmount] = useState<string>("");
   // const [enteredDate, setEnteredDate] = useState<string>("");
@@ -43,6 +43,7 @@ function ExpenseForm() {
     const expenceData = { title: userInput.enteredTitle, amount: userInput.enteredAmount, date: new Date(userInput.enteredDate) };
     console.log("-----Expence Data", expenceData);
 
+    onSaveExpenceData(expenceData);
     //---clear input
     //---we use two way binding using valueattribute
     setUserInput((prev) => {

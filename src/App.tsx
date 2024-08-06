@@ -33,10 +33,11 @@ function App() {
   const addExpenceHandler = (expense:ExpencesObject) => {
     console.log("++++++", expense);
   }
+  
   return (
     <div>
       <NewExpense onAddExpence={addExpenceHandler} />
-      <Expences expenses={ expenses} />
+      <Expences expenses={expenses} />
     </div>
   );
 }

@@ -4,19 +4,22 @@ import Card from "../UI/Card";
 import "../../assets/css/Expenses.css";
 import { ExpencesArray } from "../../types/App";
 import ExpenceFilter from "./ExpenceFilter";
+import ExpenceList from "./ExpenceList";
 
 function Expences({ expenses }: { expenses: ExpencesArray }) {
-  const [filteredYear, setFilteredyear] = useState<string>("2020")
+  const [filteredYear, setFilteredyear] = useState<string>("2022")
   
   const filterChangeHandler = (selectedYear: string) => {
     setFilteredyear(selectedYear);
   }
 
+  const filterExpense:ExpencesArray = expenses.filter((expence) => {
+    return expence.date.getFullYear().toString() === filteredYear;
+  })
+
   return <Card className="expenses">
-    <ExpenceFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-  {expenses.map((item, index) => {
-        return <ExpenceItem id={item.id} title={item.title} amount={item.amount} date={item.date} />
-      })}
+    <ExpenceFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+    <ExpenceList expenses={ filterExpense} />
     </Card>
 }
 

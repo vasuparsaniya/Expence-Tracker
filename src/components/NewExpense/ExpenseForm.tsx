@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import "../../assets/css/ExpenseForm.css";
 
-function ExpenseForm({onSaveExpenceData}:{onSaveExpenceData:(data:any)=>void}) {
+function ExpenseForm({onSaveExpenceData,onCancle}:{onSaveExpenceData:(data:any)=>void,onCancle:()=>void}) {
   // const [enteredTitle, setEnteredTitle] = useState<string>("");
   // const [enteredAmount, setEnteredAmount] = useState<string>("");
   // const [enteredDate, setEnteredDate] = useState<string>("");
@@ -67,6 +67,7 @@ function ExpenseForm({onSaveExpenceData}:{onSaveExpenceData:(data:any)=>void}) {
       </div>
     </div>
     <div className="new-expense__actions">
+      <button type="button" onClick={onCancle}>Cancle</button>
       <button type="submit">Add Expense</button>
     </div>
   </form>

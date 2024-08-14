@@ -1,6 +1,6 @@
 interface ChartProps {
   value: number;
-  maxValue: number | null;
+  maxValue?: number | null;
   label: string;
 }
 type ChartPropsArray = ChartProps[];
